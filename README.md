@@ -1,2 +1,2 @@
 # cofoAt
-Send kakaotalk message when codeforces rating change
+Send ~~kakaotalk~~ slack message when codeforces rating change
