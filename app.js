@@ -50,7 +50,7 @@ function findTier(channel, id) {
 
 }
 
-async function sendMsg(id, text) {
+async function sendMsg(id, text) {   //
     try {
         // Call the chat.postMessage method using the built-in WebClient
         const result = await client.chat.postMessage({
