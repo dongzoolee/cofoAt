@@ -58,7 +58,7 @@ async function sendMsg(id, text) {
             token: slackBotToken,
             channel: id,
             text: text
-            // You could also use a blocks[] array to send richer content
+            // You could also use a blocks[]  array to send richer content
         });
 
         // Print result, which includes information about the message (like TS)
