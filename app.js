@@ -3,6 +3,7 @@ const { createEventAdapter } = require('@slack/events-api');
 
 require('dotenv').config();
 const slackSigningSecret = process.env.SLACK_SIGNING_SECRET;
+const slackBotToken = process.env.SLACK_BOT_TOKEN;
 const slackEvents = createEventAdapter(slackSigningSecret);
 const port = process.env.PORT || 3000;
 
@@ -26,7 +27,7 @@ const { WebClient, LogLevel } = require("@slack/web-api");
 // WebClient insantiates a client that can call API methods
 // When using Bolt, you can use either `app.client` or the `client` passed to listeners.
 const client = new WebClient({
-    token: "xoxb-560811458228-1627636746177-4gEwWPj35KLtOrIWWWuxx8Ah",
+    token: slackBotToken,
     // LogLevel can be imported and used to make debugging simpler
     logLevel: LogLevel.DEBUG
 });
@@ -54,7 +55,7 @@ async function sendMsg(id, text) {
         // Call the chat.postMessage method using the built-in WebClient
         const result = await client.chat.postMessage({
             // The token you used to initialize your app
-            token: "xoxb-560811458228-1627636746177-4gEwWPj35KLtOrIWWWuxx8Ah",
+            token: slackBotToken,
             channel: id,
             text: text
             // You could also use a blocks[] array to send richer content
